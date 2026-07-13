@@ -27,4 +27,4 @@ jobs:
           context: .
           file: ./build/Dockerfile
           push: true
-          tags: mohammedkhalil7/${{ env.IMAGE_NAME }}
+          tags: mohammedkhalil7/${{ env.IMAGE_NAME }}:1.0.0
