@@ -7,7 +7,7 @@ COPY app/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app/*.py .
-=======
+
 COPY ./app/requirements.txt .
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip3 install -r requirements.txt
