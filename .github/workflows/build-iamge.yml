@@ -1,9 +1,16 @@
 name: Build and Push Docker Image
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+     environment:
+      description: "Image Type"
+      required: true
+      type: choice
+      options:
+        - dev
+        - staging
+        - production
 env:
   IMAGE_NAME : flask-app
   
@@ -27,4 +34,4 @@ jobs:
           context: .
           file: ./build/Dockerfile
           push: true
-          tags: mohammedkhalil7/${{ env.IMAGE_NAME }}:1.0.0
+          tags: mohammedkhalil7/${{ env.IMAGE_NAME }}:1.0.1
